@@ -16,12 +16,12 @@ import {
 import Link from "next/link"
 import { useRouter } from "next/router"
 
+import ButtonLink from "@components/shared/ButtonLink"
 import NextImage from "@components/shared/NextImage/NextImage"
 import { INavbar } from "@models/INavbar"
 import { IPageContext } from "@models/IPageContext"
 
 import NavItem from "./NavItem"
-import ButtonLink from "@components/shared/ButtonLink"
 
 const solutions = [
   {
@@ -100,7 +100,7 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
   const router = useRouter()
 
   return (
-    <Popover className="relative bg-gray-50 border-gray-200 border-b border-t-4 border-t-brand-500">
+    <Popover className="relative border-t-4 border-b border-gray-200 bg-gray-50 border-t-brand-500">
       <div className="px-4 mx-auto sm:px-6">
         <div className="flex items-center justify-between py-2 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">

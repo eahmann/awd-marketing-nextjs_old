@@ -4,9 +4,9 @@ import { useRouter } from "next/router"
 import Layout from "@components/Layout"
 import BlockManager from "@components/shared/BlockManager"
 import { IPage } from "@models/IPage"
+import { IPageContext } from "@models/IPageContext"
 import { getPageData, fetchAPI, getGlobalData } from "@utils/api"
 import { getLocalizedPaths } from "@utils/localize"
-import { IPageContext } from "@models/IPageContext"
 
 const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
   const router = useRouter()
@@ -15,8 +15,6 @@ const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
   if (!router.isFallback && !blocks?.length) {
     return <ErrorPage statusCode={404} />
   }
-  console.log("global", global)
-  console.log("navbar", global.navbar)
 
   // Loading screen (only possible in preview mode)
   if (router.isFallback) {
@@ -72,8 +70,6 @@ export async function getStaticProps(context) {
 
   // We have the required page data, pass it to the page component
   const { blocks, localizations, slug } = pageData
-  console.log(pageData)
-  console.log(pageData.blocks[0].heading)
 
   const pageContext: IPageContext = {
     locale: pageData.locale,
