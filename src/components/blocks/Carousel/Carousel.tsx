@@ -14,9 +14,11 @@ const Carousel = ({ title, images }) => {
     <>
       <div className="mb-16">
         {title && (
-          <h1 className="text-4xl font-extrabold tracking-tight text-center text-gray-900 sm:text-4xl md:text-5xl">
-            <span className="block xl:inline">{title}</span>
-          </h1>
+          <div className="pb-5 border-b border-gray-200 mx-6">
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              {title}
+            </h3>
+          </div>
         )}
         <Swiper
           className="mt-2"

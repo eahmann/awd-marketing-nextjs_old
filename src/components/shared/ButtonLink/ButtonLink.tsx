@@ -52,7 +52,7 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
             "shadow-none": !shadow,
           },
           {
-            "border-transparent bg-primary-500 text-white hover:bg-primary-400":
+            "border-transparent bg-primary-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-primary-400":
               appearance === "primary",
           },
           {
@@ -60,7 +60,7 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
               appearance === "primary-outline",
           },
           {
-            "border-transparent bg-secondary-500 text-white hover:bg-secondary-400":
+            "border-transparent bg-secondary-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-secondary-400":
               appearance === "secondary",
           },
           {
@@ -68,7 +68,7 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
               appearance === "secondary-outline",
           },
           {
-            "border-transparent bg-brand-500 text-white hover:bg-brand-400":
+            "border-transparent bg-brand-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-brand-400":
               appearance === "brand",
           },
           {
@@ -76,7 +76,7 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
               appearance === "brand-outline",
           },
           {
-            "border-transparent bg-gray-200 text-gray-800 hover:bg-gray-300":
+            "border-transparent bg-gray-200 text-gray-800 text-opacity-90 hover:text-opacity-100 hover:bg-gray-300":
               appearance === "muted",
           },
           {
