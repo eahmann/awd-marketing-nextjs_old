@@ -20,7 +20,7 @@ const Hero = ({ image, title, label, text, buttons }) => {
               <ButtonLink
                 key={button.id}
                 button={button}
-                className="mt-4 lg:mr-4 lg:mt-0"
+                className="mt-4 lg:mr-4 lg:last:mr-0 lg:mt-0"
               />
             ))}
           </div>
