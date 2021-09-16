@@ -1,6 +1,8 @@
 // Get the url of the Strapi API based om the env variable or the default local one.
 export function getStrapiURL(path) {
-  return `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:1337"}${path}`
+  return `${
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
+  }${path}`
 }
 
 // Helper to make GET requests to Strapi
