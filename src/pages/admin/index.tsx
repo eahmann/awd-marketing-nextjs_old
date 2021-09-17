@@ -11,6 +11,7 @@ import {
   UsersIcon,
   XIcon,
 } from "@heroicons/react/outline"
+
 import { fetchAPI } from "@utils/api"
 
 const navigation = [
