@@ -11,6 +11,7 @@ import {
   UsersIcon,
   XIcon,
 } from "@heroicons/react/outline"
+import { fetchAPI } from "@utils/api"
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
@@ -227,8 +228,7 @@ const Admin = ({ data }) => {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:1337/pages/1`)
-  const data = await res.json()
+  const data = await fetchAPI(`/pages/1`)
 
   // Pass data to the page via props
   return { props: { data } }
