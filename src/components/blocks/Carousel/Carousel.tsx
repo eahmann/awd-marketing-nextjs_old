@@ -14,8 +14,8 @@ const Carousel = ({ title, images }) => {
     <>
       <div className="mb-16">
         {title && (
-          <div className="pb-5 border-b border-gray-200 mx-6">
-            <h3 className="text-lg leading-6 font-medium text-gray-900">
+          <div className="pb-5 mx-6 border-b border-gray-200">
+            <h3 className="text-lg font-medium text-gray-900 leading-6">
               {title}
             </h3>
           </div>
