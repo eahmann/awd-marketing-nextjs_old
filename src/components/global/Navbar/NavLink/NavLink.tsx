@@ -4,13 +4,20 @@ import { INavItem } from "@models/INavItem"
 type Props = {
   data: INavItem
   className?: string
+  menuState?: any
+  closeHook?: any
 }
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
-const NavLink: React.FC<Props> = ({ data, className, ...rest }) => {
+const NavLink: React.FC<Props> = ({
+  data,
+  className,
+  menuState,
+  closeHook,
+}) => {
   return (
     <CustomLink
       link={data}
@@ -19,7 +26,7 @@ const NavLink: React.FC<Props> = ({ data, className, ...rest }) => {
       <button
         tabIndex={-1}
         className={classNames(
-          "font-medium text-gray-500 md:text-base hover:text-gray-900",
+          "font-medium text-gray-500 md:text-base hover:text-gray-900 px-2 md:px-0",
           className
         )}
       >

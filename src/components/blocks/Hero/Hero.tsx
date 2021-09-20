@@ -3,7 +3,7 @@ import NextImage from "@components/shared/NextImage/NextImage"
 
 const Hero = ({ image, title, label, text, buttons }) => {
   return (
-    <main className="lg:relative mb-16">
+    <main className="mb-16 lg:relative">
       <div className="w-full pt-16 pb-20 mx-auto text-center lg:py-48 max-w-8xl lg:text-left">
         <div className="px-4 lg:w-1/2 sm:px-8 xl:pr-16">
           <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">

@@ -5,10 +5,18 @@ import NavPopover from "../NavPopover"
 
 type ItemProps = {
   itemData: INavItem
+  className?: string
+  menuState?: any
+  closeHook?: any
 }
 
 // Display a nav item
-const Item: React.FC<ItemProps> = ({ itemData }) => {
+const Item: React.FC<ItemProps> = ({
+  itemData,
+  className,
+  menuState = "",
+  closeHook = "",
+}) => {
   // Get the element
   const NavElement: typeof NavPopover | typeof NavLink =
     itemData.children.length > 0 ? NavPopover : NavLink
@@ -18,13 +26,30 @@ const Item: React.FC<ItemProps> = ({ itemData }) => {
   }
 
   // Render the nav item
-  return <NavElement data={itemData} />
+  return (
+    <NavElement
+      data={itemData}
+      className={className}
+      menuState={menuState}
+      closeHook={closeHook}
+    />
+  )
 }
 
-const NavItem = ({ navItem, ...rest }) => {
+const NavItem: React.FC<ItemProps> = ({
+  itemData,
+  className,
+  menuState,
+  closeHook,
+}) => {
   return (
     <>
-      <Item itemData={navItem} />
+      <Item
+        itemData={itemData}
+        className={className}
+        menuState={menuState}
+        closeHook={closeHook}
+      />
     </>
   )
 }
