@@ -23,7 +23,7 @@ const ContactUsForm = () => {
   })
 
   return (
-    <div className="px-4 py-16 overflow-hidden bg-white sm:px-6 lg:px-8 lg:py-24">
+    <div className="px-4 overflow-hidden bg-white sm:px-6 lg:px-8 py-12 sm:py-16">
       <div className="relative max-w-xl mx-auto">
         <svg
           className="absolute left-full transform translate-x-1/2"
