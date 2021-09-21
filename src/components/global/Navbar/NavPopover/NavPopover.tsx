@@ -67,7 +67,7 @@ const NavPopover: React.FC<Props> = ({ data, menuState, closeHook }) => {
                       >
                         <NavLink
                           data={item}
-                          className="w-full px-2 py-4 text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
+                          className="w-full px-2 py-4 text-left focus:outline-none"
                         />
                       </div>
                     ))}

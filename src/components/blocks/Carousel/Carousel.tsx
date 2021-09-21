@@ -12,7 +12,7 @@ SwiperCore.use([Autoplay, Navigation, Pagination])
 const Carousel = ({ title, images }) => {
   return (
     <>
-      <div className="mb-16">
+      <div className="mt-20">
         {title && (
           <div className="pb-5 mx-6 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900 leading-6">
@@ -38,8 +38,6 @@ const Carousel = ({ title, images }) => {
               slidesPerView: 2,
             },
           }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           {images.map((image) => (
             <SwiperSlide key={image.id}>

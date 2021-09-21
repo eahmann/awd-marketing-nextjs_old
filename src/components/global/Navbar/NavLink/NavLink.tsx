@@ -26,7 +26,7 @@ const NavLink: React.FC<Props> = ({
       <button
         tabIndex={-1}
         className={classNames(
-          "font-medium text-gray-500 md:text-base hover:text-gray-900 px-2 md:px-0",
+          "font-medium text-gray-500 md:text-base hover:text-gray-900 px-2 md:px-0 focus:ring-2 focus:ring-offset-2 focus:ring-brand-500",
           className
         )}
       >
