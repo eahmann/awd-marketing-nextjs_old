@@ -90,7 +90,7 @@ const navigation = {
 
 const Footer = ({}) => {
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer className="" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

@@ -1,16 +1,8 @@
-import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/react"
+import Carousel from "react-multi-carousel"
 
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/scrollbar"
 import NextImage from "@components/shared/NextImage/NextImage"
 
-import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-
-SwiperCore.use([Autoplay, Navigation, Pagination])
 
 const CarouselBlock = ({ title, images }) => {
   const responsive = {

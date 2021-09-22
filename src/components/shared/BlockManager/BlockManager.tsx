@@ -1,5 +1,4 @@
 import CallToAction from "@components/blocks/CallToAction"
-import Carousel from "@components/blocks/Carousel"
 import CarouselBlock from "@components/blocks/Carousel/Carousel"
 import ContactUsForm from "@components/blocks/ContactUsForm"
 import FAQ from "@components/blocks/FAQ"
