@@ -32,13 +32,16 @@ const CallToAction = ({ title, text, buttons, theme }) => {
           <span className={getTitleColor(theme) + " block"}>{title}</span>
           <span className="block"></span>
         </h2>
-        <p
-          className={
-            getTextColor(theme) + " mt-4 text-lg text-${theme}-50 leading-6"
-          }
-        >
-          {text}
-        </p>
+        {text && (
+          <p
+            className={
+              getTextColor(theme) + " mt-4 text-lg text-${theme}-50 leading-6"
+            }
+          >
+            {text}
+          </p>
+        )}
+
         <div className="flex flex-col justify-center mt-4 lg:flex-row">
           {buttons.map((button) => (
             <ButtonLink

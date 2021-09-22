@@ -9,13 +9,13 @@ const people = [
   // More people...
 ]
 
-const ServiceCardGroup = ({ cards }) => {
+const ServiceCardGroup = ({ title, cards }) => {
   return (
     <div className="bg-white">
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 sm:py-16">
         <div className="space-y-12">
           <h2 className="text-3xl font-extrabold tracking-tight text-center sm:text-4xl">
-            Our Services
+            {title}
           </h2>
           <ul
             role="list"
