@@ -1,10 +1,12 @@
+import classNames from "classnames"
+
 import ButtonLink from "@components/shared/ButtonLink"
 
 function getBackgroundColor(theme) {
   if (theme === "muted") {
     return "bg-white"
   } else {
-    return `bg-${theme}-600`
+    return `bg-gradient-to-r from-${theme}-700 via-${theme}-500  to-${theme}-700`
   }
 }
 
@@ -24,9 +26,23 @@ function getTextColor(theme) {
   }
 }
 
-const CallToAction = ({ title, text, buttons, theme }) => {
+const CallToAction = ({
+  title,
+  text,
+  buttons,
+  theme,
+  marginTop,
+  marginBottom,
+}) => {
   return (
-    <div className={getBackgroundColor(theme) + " mt-20"}>
+    <section
+      className={classNames(
+        getBackgroundColor(theme),
+        "shadow-2xl",
+        { "mt-20": marginTop },
+        { "mb-20": marginBottom }
+      )}
+    >
       <div className="max-w-3xl px-4 py-16 mx-auto text-center sm:py-20 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
           <span className={getTitleColor(theme) + " block"}>{title}</span>
@@ -52,7 +68,7 @@ const CallToAction = ({ title, text, buttons, theme }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

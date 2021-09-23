@@ -1,13 +1,13 @@
+import classNames from "classnames"
 import Carousel from "react-multi-carousel"
 
 import NextImage from "@components/shared/NextImage/NextImage"
 
 import "react-multi-carousel/lib/styles.css"
 
-const CarouselBlock = ({ title, images }) => {
+const CarouselBlock = ({ title, images, marginTop, marginBottom }) => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -26,44 +26,43 @@ const CarouselBlock = ({ title, images }) => {
   }
 
   return (
-    <>
-      <div className="mt-20">
-        {title && (
-          <div className="pb-5 mx-6 border-b border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900 leading-6">
-              {title}
-            </h3>
+    <section
+      className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}
+    >
+      {title && (
+        <div className="px-12 pb-5 mx-6 max-w-8xl">
+          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            {title}
+          </h2>
+        </div>
+      )}
+      <Carousel
+        swipeable={true}
+        draggable={true}
+        showDots={true}
+        responsive={responsive}
+        ssr={true} // means to render carousel on server-side.
+        infinite={true}
+        keyBoardControl={true}
+        customTransition="all 0.5s ease"
+        transitionDuration={500}
+        containerClass="carousel-container mt-6"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
+      >
+        {images.map((image) => (
+          <div key={image.id} className="h-96">
+            <NextImage media={image} />
+            {image.caption && (
+              <div className="absolute bottom-0 w-full p-2 bg-gray-50 bg-opacity-60">
+                {image.caption}
+              </div>
+            )}
           </div>
-        )}
-        <Carousel
-          swipeable={true}
-          draggable={true}
-          showDots={true}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          autoPlay={false}
-          autoPlaySpeed={1000}
-          keyBoardControl={true}
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          {images.map((image) => (
-            <div key={image.id} className="h-96">
-              <NextImage media={image} />
-              {image.caption && (
-                <div className="absolute bottom-0 w-full p-2 bg-gray-50 bg-opacity-60">
-                  {image.caption}
-                </div>
-              )}
-            </div>
-          ))}
-        </Carousel>
-      </div>
-    </>
+        ))}
+      </Carousel>
+    </section>
   )
 }
 

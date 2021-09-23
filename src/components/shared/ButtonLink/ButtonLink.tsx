@@ -76,11 +76,11 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
               appearance === "brand-outline",
           },
           {
-            "border-transparent bg-gray-200 text-gray-800 text-opacity-90 hover:text-opacity-100 hover:bg-gray-300":
+            "border-transparent bg-gray-50 text-gray-800 text-opacity-90 hover:text-opacity-100 hover:bg-gray-200":
               appearance === "muted",
           },
           {
-            "border border-gray-200 bg-transparent text-gray-800 hover:bg-gray-100":
+            "border border-gray-50 bg-transparent text-gray-800 hover:bg-gray-100":
               appearance === "muted-outline",
           }
         )}
