@@ -34,7 +34,7 @@ const FAQ = ({ title, subtitle, questions }) => {
                           <ChevronDownIcon
                             className={classNames(
                               open ? "-rotate-180" : "rotate-0",
-                              "h-6 w-6 transform"
+                              "h-6 w-6 transform duration-150"
                             )}
                             aria-hidden="true"
                           />
@@ -43,9 +43,9 @@ const FAQ = ({ title, subtitle, questions }) => {
                     </dt>
                     <Transition
                       enter="transition duration-200 ease-out"
-                      enterFrom="transform scale-95 opacity-0"
+                      enterFrom="transform scale-75 opacity-0"
                       enterTo="transform scale-100 opacity-100"
-                      leave="transition duration-100 ease-out"
+                      leave="transition duration-150 ease-out"
                       leaveFrom="transform scale-100 opacity-100"
                       leaveTo="transform scale-95 opacity-0"
                     >
