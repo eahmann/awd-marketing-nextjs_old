@@ -1,36 +1,51 @@
+import { IImage } from "@models/IImage"
 import { NextSeo } from "next-seo"
 
-// import { getStrapiMedia } from "@utils/media"
+import { getStrapiMedia } from "@utils/media"
 
-const Seo = ({ metadata }) => {
+type Props = {
+  metaTitle: string
+  metaDescription: string
+  twitterCardType: string
+  twitterUsername: string
+  shareImage: IImage
+}
+
+const Seo: React.FC<Props> = ({
+  metaTitle,
+  metaDescription,
+  twitterCardType,
+  twitterUsername,
+  shareImage,
+}) => {
   // Prevent errors if no metadata was set
-  if (!metadata) return null
+  if (!metaTitle && !metaDescription) return null
 
   return (
     <NextSeo
-      title={metadata.metaTitle}
-      description={metadata.metaDescription}
+      title={metaTitle}
+      description={metaDescription}
       openGraph={{
         // Title and description are mandatory
-        title: metadata.metaTitle,
-        description: metadata.metaDescription,
+        title: metaTitle,
+        description: metaDescription,
         // Only include OG image if we have it
         // Careful: if you disable image optimization in Strapi, this will break
-        // ...(metadata.shareImage && {
-        //   images: Object.values(metadata.shareImage.formats).map((image) => {
-        //     return {
-        //       url: getStrapiMedia(image.url),
-        //       width: image.width,
-        //       height: image.height,
-        //     }
-        //   }),
-        // }),
+        ...(shareImage && {
+          images: Object.values(shareImage.formats).map((image: IImage) => {
+            return {
+              url: getStrapiMedia(image.url),
+              width: image.width,
+              height: image.height,
+            }
+          }),
+        }),
       }}
       // Only included Twitter data if we have it
       twitter={{
-        ...(metadata.twitterCardType && { cardType: metadata.twitterCardType }),
+        ...(twitterCardType && { cardType: twitterCardType }),
         // Handle is the twitter username of the content creator
-        ...(metadata.twitterUsername && { handle: metadata.twitterUsername }),
+        ...(twitterUsername && { handle: twitterUsername }),
       }}
     />
   )

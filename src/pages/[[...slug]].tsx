@@ -8,6 +8,7 @@ import { IPage } from "@models/IPage"
 import { IPageContext } from "@models/IPageContext"
 import { getPageData, fetchAPI, getGlobalData } from "@utils/api"
 import { getLocalizedPaths } from "@utils/localize"
+import Seo from "@components/shared/Seo"
 
 const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
   const router = useRouter()
@@ -26,7 +27,7 @@ const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
 
   return (
     <Layout global={global} pageContext={pageContext} preview={preview}>
-      <NextSeo {...global.metadata} />
+      <Seo {...metadata} />
       {blocks && <BlockManager blocks={blocks} />}
     </Layout>
   )
@@ -72,7 +73,7 @@ export async function getStaticProps(context) {
   }
 
   // We have the required page data, pass it to the page component
-  const { blocks, localizations, slug } = pageData
+  const { blocks, localizations, slug, metadata } = pageData
 
   const pageContext: IPageContext = {
     locale: pageData.locale,
@@ -87,6 +88,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       preview,
+      metadata: metadata,
       blocks: blocks,
       global: globalLocale,
       pageContext: {
