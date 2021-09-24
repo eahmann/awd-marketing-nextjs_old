@@ -9,6 +9,7 @@ type Props = {
   twitterCardType: string
   twitterUsername: string
   shareImage: IImage
+  titleSuffix: string
 }
 
 const Seo: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const Seo: React.FC<Props> = ({
   twitterCardType,
   twitterUsername,
   shareImage,
+  titleSuffix,
 }) => {
   // Prevent errors if no metadata was set
   if (!metaTitle && !metaDescription) return null
@@ -27,7 +29,7 @@ const Seo: React.FC<Props> = ({
       description={metaDescription}
       openGraph={{
         // Title and description are mandatory
-        title: metaTitle,
+        title: `${metaTitle} | ${titleSuffix}`,
         description: metaDescription,
         // Only include OG image if we have it
         // Careful: if you disable image optimization in Strapi, this will break

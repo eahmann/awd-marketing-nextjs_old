@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       </Head>
       <DefaultSeo
         title={metadata.title}
-        titleTemplate={metadata.titleTemplate}
+        titleTemplate={`%s | ${metadata.titleSuffix}`}
       />
       <Component {...pageProps} />
     </>

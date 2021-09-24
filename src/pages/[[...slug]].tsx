@@ -80,12 +80,19 @@ export async function getStaticProps(context) {
     localizations,
   }
 
+  console.log(globalLocale)
+
+  const meta = {
+    ...metadata,
+    titleSuffix: globalLocale.metadata.titleSuffix,
+  }
+
   const localizedPaths = getLocalizedPaths(pageContext)
 
   return {
     props: {
       preview,
-      metadata: metadata,
+      metadata: meta,
       blocks: blocks,
       global: globalLocale,
       pageContext: {
