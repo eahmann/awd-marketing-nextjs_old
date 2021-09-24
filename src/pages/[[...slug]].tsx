@@ -1,14 +1,13 @@
-import { NextSeo } from "next-seo"
 import ErrorPage from "next/error"
 import { useRouter } from "next/router"
 
 import Layout from "@components/Layout"
 import BlockManager from "@components/shared/BlockManager"
+import Seo from "@components/shared/Seo"
 import { IPage } from "@models/IPage"
 import { IPageContext } from "@models/IPageContext"
 import { getPageData, fetchAPI, getGlobalData } from "@utils/api"
 import { getLocalizedPaths } from "@utils/localize"
-import Seo from "@components/shared/Seo"
 
 const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
   const router = useRouter()
@@ -17,8 +16,6 @@ const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
   if (!router.isFallback && !blocks?.length) {
     return <ErrorPage statusCode={404} />
   }
-
-  console.log(global)
 
   // Loading screen (only possible in preview mode)
   if (router.isFallback) {
