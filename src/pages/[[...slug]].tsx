@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo"
 import ErrorPage from "next/error"
 import { useRouter } from "next/router"
 
@@ -16,6 +17,8 @@ const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
     return <ErrorPage statusCode={404} />
   }
 
+  console.log(global)
+
   // Loading screen (only possible in preview mode)
   if (router.isFallback) {
     return <div className="container">Loading...</div>
@@ -23,7 +26,7 @@ const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
 
   return (
     <Layout global={global} pageContext={pageContext} preview={preview}>
-      {/* <Seo seo={delve(pageData, "seo")} /> */}
+      <NextSeo {...global.metadata} />
       {blocks && <BlockManager blocks={blocks} />}
     </Layout>
   )
