@@ -1,6 +1,6 @@
-import { IImage } from "@models/IImage"
 import { NextSeo } from "next-seo"
 
+import { IImage } from "@models/IImage"
 import { getStrapiMedia } from "@utils/media"
 
 type Props = {
