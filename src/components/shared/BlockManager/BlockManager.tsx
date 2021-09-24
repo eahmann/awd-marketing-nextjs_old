@@ -16,7 +16,6 @@ const blockComponents = {
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   const Block = blockComponents[__component]
-  console.log("Found:", __component)
 
   return Block ? <Block key={`index-${index}`} {...rest} /> : null
 }
