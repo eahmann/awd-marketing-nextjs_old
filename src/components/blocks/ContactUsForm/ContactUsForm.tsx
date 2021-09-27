@@ -181,7 +181,7 @@ const ContactUsForm = ({ contactInfo }) => {
                           id="phone"
                           autoComplete="tel"
                           className="block w-full px-4 py-3 border-gray-300 focus:ring-brand-500 focus:border-brand-500 rounded-md"
-                          placeholder="555-987-6543"
+                          placeholder="555-123-4567"
                         />
                       </div>
                       <ErrorMessage
