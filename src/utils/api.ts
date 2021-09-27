@@ -27,6 +27,33 @@ export async function fetchAPI(path, options = {}) {
   return data
 }
 
+function mergeDataDeps(blockData, extendedData) {
+  return Object.assign({}, blockData, extendedData)
+}
+
+export async function checkRequiredData(block, locale) {
+  switch (block.__component) {
+    case "blocks.contact-us-form":
+      const global = await getGlobalData(locale)
+      return mergeDataDeps(block, {
+        contactInfo: global.contactInfo,
+      })
+    default:
+      return block
+  }
+}
+
+export async function getDataDependencies(json, locale) {
+  let blocks = json.blocks
+  blocks = await Promise.all(
+    blocks.map((block) => checkRequiredData(block, locale))
+  )
+  return {
+    ...json,
+    blocks,
+  }
+}
+
 /**
  *
  * @param {object} params The router params object with slug: { slug: [<slug>] }
@@ -44,7 +71,7 @@ export async function getPageData(params, locale, preview) {
   }
 
   // Return the first item since there should only be one result per slug
-  return pagesData[0]
+  return await getDataDependencies(pagesData[0], locale)
 }
 
 // Get site data from Strapi (metadata, navbar, footer...)
