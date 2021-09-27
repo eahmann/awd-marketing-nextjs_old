@@ -6,11 +6,15 @@ import "@styles/tailwind.scss"
 import App from "next/app"
 import ErrorPage from "next/error"
 import Head from "next/head"
+import { useRouter } from "next/router"
 
+import { IImage } from "@models/IImage"
 import { getGlobalData } from "@utils/api"
 import { getStrapiMedia } from "@utils/media"
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter()
+
   // Extract the data we need
   const { global } = pageProps
   if (global == null) {
@@ -26,8 +30,30 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon.url)} />
       </Head>
       <DefaultSeo
-        title={metadata.title}
+        title={metadata.metaTitle}
         titleTemplate={`%s | ${metadata.titleSuffix}`}
+        description={metadata.metaDescription}
+        openGraph={{
+          title: `${metadata.title} | ${metadata.titleSuffix}`,
+          description: metadata.metaDescription,
+          images: Object.values(metadata.shareImage.formats).map(
+            (image: IImage) => {
+              return {
+                url: getStrapiMedia(image.url),
+                width: image.width,
+                height: image.height,
+              }
+            }
+          ),
+          url: metadata.defaultUrl + router.asPath,
+        }}
+        // Only included Twitter data if we have it
+        twitter={{
+          ...(metadata.twitterCardType && {
+            cardType: metadata.twitterCardType,
+          }),
+          ...(metadata.twitterUsername && { handle: metadata.twitterUsername }),
+        }}
       />
       <Component {...pageProps} />
     </>
