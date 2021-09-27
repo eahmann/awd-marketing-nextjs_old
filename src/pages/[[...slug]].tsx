@@ -80,8 +80,6 @@ export async function getStaticProps(context) {
     localizations,
   }
 
-  console.log(globalLocale)
-
   const meta = {
     ...metadata,
     titleSuffix: globalLocale.metadata.titleSuffix,

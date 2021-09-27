@@ -66,7 +66,7 @@ const navigation = {
   ],
 }
 
-const Footer = ({ logo, smallText, columns }) => {
+const Footer = ({ contactInfo, logo, smallText, columns }) => {
   return (
     <footer
       className="border-t border-gray-200 bg-gray-50"
@@ -120,7 +120,7 @@ const Footer = ({ logo, smallText, columns }) => {
         <div className="pt-8 mt-12 border-t border-gray-200">
           <p className="text-base text-gray-400 xl:text-center">
             &copy; 2021 Hisken Construction, Inc. All rights reserved. Website
-            by Ahmann Web Development
+            by Ahmann Web Development {contactInfo.email}
           </p>
         </div>
       </div>
