@@ -27,7 +27,10 @@ const ContactUsForm = ({ contactInfo }) => {
     lastName: yup.string().required("Last name is required"),
     company: yup.string(),
     email: yup.string().email("Email is invalid").required("Email is required"),
-    phone: yup.string().matches(phoneRegExp, "Phone number is not valid"),
+    phone: yup
+      .string()
+      .required("Phone number is required")
+      .matches(phoneRegExp, "Phone number is not valid"),
     message: yup.string().required("Message is required"),
   })
 
@@ -169,7 +172,7 @@ const ContactUsForm = ({ contactInfo }) => {
                         htmlFor="phone"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Phone Number
+                        Phone number
                       </label>
                       <div className="relative mt-1 rounded-md shadow-sm">
                         <Field
