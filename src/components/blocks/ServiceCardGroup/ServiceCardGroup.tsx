@@ -16,7 +16,11 @@ const ServiceCardGroup = ({ title, cards }) => {
               <li key={card.id}>
                 <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
                   <div className="overflow-hidden rounded-lg shadow-lg h-72 aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
-                    <NextImage media={card.image} alt={card.image.alt} />
+                    <NextImage
+                      media={card.image}
+                      layout="fill"
+                      alt={card.image.alt}
+                    />
                   </div>
                   <div className="sm:col-span-2">
                     <div className="space-y-4">
