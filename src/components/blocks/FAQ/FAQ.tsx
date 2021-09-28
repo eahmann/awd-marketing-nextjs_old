@@ -1,7 +1,6 @@
-import classNames from 'classnames'
-
 import { Disclosure, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/outline"
+import classNames from "classnames"
 
 const FAQ = ({ title, questions, marginTop, marginBottom }) => {
   return (
