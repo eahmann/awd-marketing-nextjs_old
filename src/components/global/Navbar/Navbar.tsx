@@ -83,7 +83,7 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
                     <NavItem
                       key={item.id}
                       itemData={item}
-                      className={`border-b-4 border-transparent rounded-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 ${
+                      className={`border-b-2 border-transparent rounded-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 ${
                         "/" + router.query["slug"] === item.href
                           ? "text-brand-500 border-brand-500"
                           : "hover:border-brand-500 hover:text-brand-500"
@@ -158,9 +158,9 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
                         {navbar.items.map((item) => (
                           <div
                             onClick={() => {
-                              item.children.length <= 1 &&
-                                setMobileMenuIsShown(false)
-                              item.children.length <= 1 && close()
+                              item.children.length <= 1
+                                ? (setMobileMenuIsShown(false), close())
+                                : null
                             }}
                             key={item.id}
                           >
@@ -168,7 +168,11 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
                               itemData={item}
                               menuState={setMobileMenuIsShown}
                               closeHook={close}
-                              className="w-full py-4 text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
+                              className={`border-l-2 border-transparent rounded-none w-full py-4 text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 ${
+                                "/" + router.query["slug"] === item.href
+                                  ? "text-brand-500 border-brand-500 bg-gray-50"
+                                  : "hover:border-brand-500 hover:text-brand-500 hover:bg-gray-50"
+                              }`}
                             />
                           </div>
                         ))}
@@ -194,55 +198,6 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
               )}
             </Popover.Panel>
           </Transition>
-          {/* <Transition
-        as={Fragment}
-        enter="duration-200 ease-out"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="duration-100 ease-in"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
-      >
-        <Popover.Panel
-          focus
-          className="absolute inset-x-0 top-0 p-2 transition transform origin-top-right md:hidden"
-        >
-          <div className="bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-y-2 divide-gray-50">
-            <div className="px-5 pt-5 pb-6">
-              <div className="flex items-center justify-between">
-                <div className={"md:hidden max-h-45px"}>
-                  <NextImage width="75" height="45" media={navbar.logo} />
-                </div>
-                <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Close menu</span>
-                    <XIcon className="w-6 h-6" aria-hidden="true" />
-                  </Popover.Button>
-                </div>
-              </div>
-              <div className="mt-6">
-                <nav className="grid gap-y-8">
-                  {navbar.items.map((item) => (
-                    <NavItem
-                      key={item.id}
-                      navItem={item}
-                      router={router}
-                      className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
-                    />
-                  ))}
-                </nav>
-              </div>
-            </div>
-            <div className="px-5 py-6 space-y-6">
-              <div>
-                {navbar.buttons.map((button) => (
-                  <ButtonLink key={button.id} button={button} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Popover.Panel>
-      </Transition> */}
         </>
       )}
     </Popover>
