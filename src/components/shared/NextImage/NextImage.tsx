@@ -20,7 +20,7 @@ const NextImage = ({ media, ...props }) => {
   return (
     <Image
       loader={loader}
-      layout="fill"
+      layout={props.layout}
       width={media.width}
       height={media.height}
       objectFit="cover"

@@ -53,7 +53,7 @@ const CarouselBlock = ({ title, images, marginTop, marginBottom }) => {
       >
         {images.map((image) => (
           <div key={image.id} className="h-96">
-            <NextImage media={image} />
+            <NextImage media={image} layout="fill" />
             {image.caption && (
               <div className="absolute bottom-0 w-full p-2 bg-gray-50 bg-opacity-60">
                 {image.caption}

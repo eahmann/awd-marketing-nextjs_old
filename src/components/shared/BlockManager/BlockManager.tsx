@@ -3,6 +3,7 @@ import CarouselBlock from "@components/blocks/Carousel/Carousel"
 import ContactUsForm from "@components/blocks/ContactUsForm"
 import FAQ from "@components/blocks/FAQ"
 import Hero from "@components/blocks/Hero"
+import ImageGallery from "@components/blocks/ImageGallery"
 import ServiceCardGroup from "@components/blocks/ServiceCardGroup"
 
 const blockComponents = {
@@ -12,6 +13,7 @@ const blockComponents = {
   "blocks.contact-us-form": ContactUsForm,
   "blocks.service-card-group": ServiceCardGroup,
   "blocks.faq": FAQ,
+  "blocks.image-gallery": ImageGallery,
 }
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
