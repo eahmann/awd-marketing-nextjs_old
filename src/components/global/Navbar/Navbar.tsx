@@ -178,7 +178,15 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
                   <div className="px-5 py-6 space-y-6">
                     <div>
                       {navbar.buttons.map((button) => (
-                        <ButtonLink key={button.id} button={button} />
+                        <div
+                          key={button.id}
+                          onMouseDown={() => {
+                            close()
+                            setMobileMenuIsShown(false)
+                          }}
+                        >
+                          <ButtonLink button={button} />
+                        </div>
                       ))}
                     </div>
                   </div>
