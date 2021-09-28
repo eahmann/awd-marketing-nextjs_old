@@ -22,8 +22,8 @@ const ImageGallery = ({ title, images, marginTop, marginBottom }) => {
       className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}
     >
       {title && (
-        <div className="pb-5 mx-6 sm:px-10 md:max-w-8xl">
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <div className="pb-2 mx-6 sm:px-10 md:max-w-8xl">
+          <h2 className="text-xl font-bold tracking-tight text-gray-800 sm:text-2xl">
             {title}
           </h2>
         </div>
