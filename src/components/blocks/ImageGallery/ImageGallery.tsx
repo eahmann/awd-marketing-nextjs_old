@@ -36,7 +36,7 @@ const ImageGallery = ({ title, images, marginTop, marginBottom }) => {
               setPhotoIndex(image.id)
               setIsOpen(true)
             }}
-            className="relative w-full overflow-hidden shadow-md rounded-md h-72"
+            className="relative w-full overflow-hidden shadow-md cursor-pointer rounded-md h-72"
           >
             <NextImage media={image} layout="fill" />
             <span>test</span>
