@@ -1,5 +1,6 @@
 import CallToAction from "@components/blocks/CallToAction"
 import CarouselBlock from "@components/blocks/Carousel/Carousel"
+import CenteredTitleAndText from "@components/blocks/CenteredTitleAndText"
 import ContactUsForm from "@components/blocks/ContactUsForm"
 import FAQ from "@components/blocks/FAQ"
 import Hero from "@components/blocks/Hero"
@@ -14,6 +15,7 @@ const blockComponents = {
   "blocks.service-card-group": ServiceCardGroup,
   "blocks.faq": FAQ,
   "blocks.image-gallery": ImageGallery,
+  "blocks.centered-title-and-text": CenteredTitleAndText,
 }
 
 const getBlockComponent = ({ __component, ...rest }, index) => {

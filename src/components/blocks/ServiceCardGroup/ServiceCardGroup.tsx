@@ -3,11 +3,8 @@ import NextImage from "@components/shared/NextImage"
 const ServiceCardGroup = ({ title, cards }) => {
   return (
     <div className="bg-white">
-      <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 sm:py-16">
+      <div className="px-4 pb-12 mx-auto max-w-7xl sm:px-6 lg:px-8 sm:pb-16">
         <div className="space-y-12">
-          <h2 className="text-3xl font-extrabold tracking-tight text-center sm:text-4xl">
-            {title}
-          </h2>
           <ul
             role="list"
             className="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"

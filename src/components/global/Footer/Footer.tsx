@@ -120,7 +120,7 @@ const Footer = ({ contactInfo, logo, smallText, columns }) => {
         <div className="pt-8 mt-12 border-t border-gray-200">
           <p className="text-base text-gray-400 xl:text-center">
             &copy; 2021 Hisken Construction, Inc. All rights reserved. Website
-            by Ahmann Web Development {contactInfo.email}
+            by Ahmann Web Development
           </p>
         </div>
       </div>

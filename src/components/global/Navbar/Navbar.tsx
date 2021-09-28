@@ -79,11 +79,17 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
               {/* Centered links */}
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
                 {navbar.items.map((item) => (
-                  <NavItem
-                    key={item.id}
-                    itemData={item}
-                    className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
-                  />
+                  <>
+                    <NavItem
+                      key={item.id}
+                      itemData={item}
+                      className={`border-b-4 border-transparent rounded-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 ${
+                        "/" + router.query["slug"] === item.href
+                          ? "text-brand-500 border-brand-500"
+                          : "hover:border-brand-500 hover:text-brand-500"
+                      }`}
+                    />
+                  </>
                 ))}
               </Popover.Group>
 

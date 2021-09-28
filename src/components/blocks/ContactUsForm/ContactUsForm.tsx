@@ -36,17 +36,9 @@ const ContactUsForm = ({ contactInfo }) => {
 
   return (
     <>
-      <div className="px-4 py-12 overflow-hidden bg-white sm:px-6 lg:px-8 sm:py-16">
+      <div className="px-4 pb-12 overflow-hidden bg-white sm:px-6 lg:px-8 sm:pb-16">
         <div className="relative max-w-xl mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Contact Us
-            </h2>
-            <p className="mt-4 text-lg text-gray-500 leading-6">
-              Fill out the form below to let us know what you need.
-            </p>
-          </div>
-          <div className="mt-12">
+          <div className="">
             <Formik
               initialValues={{
                 firstName: "",
