@@ -50,7 +50,7 @@ export async function getStaticPaths(context) {
     }
   })
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps(context) {
@@ -98,7 +98,6 @@ export async function getStaticProps(context) {
         localizedPaths,
       },
     },
-    revalidate: 10,
   }
 }
 
