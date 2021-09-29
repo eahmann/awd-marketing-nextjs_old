@@ -98,6 +98,7 @@ export async function getStaticProps(context) {
         localizedPaths,
       },
     },
+    revalidate: 10,
   }
 }
 
