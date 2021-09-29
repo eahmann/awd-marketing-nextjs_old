@@ -53,8 +53,8 @@ export const getServerSideProps = async ({ res }) => {
         "[[...slug]].tsx",
         "sitemap.xml.tsx",
         ".next",
-        "__next_launcher",
-        "__vc_bridge.js",
+        "___next_launcher",
+        "___vc_bridge.js",
         "node_modules",
         "package.json",
       ].includes(staticPage)
