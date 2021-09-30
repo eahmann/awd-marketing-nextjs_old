@@ -21,6 +21,10 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return <ErrorPage statusCode={404} />
   }
 
+  const urlPath = router.asPath.endsWith("/")
+    ? router.asPath
+    : router.asPath + "/"
+
   const { metadata } = global
 
   return (
@@ -33,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         title={metadata.metaTitle}
         titleTemplate={`%s | ${metadata.titleSuffix}`}
         description={metadata.metaDescription}
+        canonical={metadata.defaultUrl + urlPath}
         openGraph={{
           type: "website",
           title: `${metadata.title} | ${metadata.titleSuffix}`,
