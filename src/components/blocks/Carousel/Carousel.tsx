@@ -46,7 +46,7 @@ const CarouselBlock = ({ title, images, marginTop, marginBottom }) => {
         keyBoardControl={true}
         customTransition="all 0.5s ease"
         transitionDuration={500}
-        containerClass="carousel-container mt-6"
+        containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
