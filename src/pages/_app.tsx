@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         titleTemplate={`%s | ${metadata.titleSuffix}`}
         description={metadata.metaDescription}
         openGraph={{
+          type: "website",
           title: `${metadata.title} | ${metadata.titleSuffix}`,
           description: metadata.metaDescription,
           images: Object.values(metadata.shareImage.formats).map(
