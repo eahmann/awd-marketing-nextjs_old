@@ -44,7 +44,7 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
     <CustomLink link={button} className={classNames(" text-center", className)}>
       <div
         className={classNames(
-          "border-2 px-6 py-3 text-base font-medium rounded-md w-full ",
+          "px-6 py-3 text-base font-medium rounded-md w-full ",
           {
             "shadow-xl": shadow,
           },
@@ -52,35 +52,35 @@ const ButtonLink: React.FC<Props> = ({ button, className }) => {
             "shadow-none": !shadow,
           },
           {
-            "border-transparent bg-primary-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-primary-400":
+            "bg-primary-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-primary-400":
               appearance === "primary",
           },
           {
-            "border-primary-500 bg-transparent text-primary-800 hover:bg-primary-50":
+            "ring-2 ring-primary-500 bg-gray-50 text-primary-800 hover:bg-primary-25":
               appearance === "primary-outline",
           },
           {
-            "border-transparent bg-secondary-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-secondary-400":
+            "bg-secondary-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-secondary-400":
               appearance === "secondary",
           },
           {
-            "border-secondary-500 bg-transparent text-secondary-800 hover:bg-secondary-50":
+            "ring-2 ring-secondary-500 bg-gray-50 text-secondary-800 hover:bg-secondary-25":
               appearance === "secondary-outline",
           },
           {
-            "border-transparent bg-brand-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-brand-400":
+            "ring-2 ring-brand-500 bg-brand-500 text-white text-opacity-90 hover:text-opacity-100 hover:bg-brand-400 hover:ring-brand-400":
               appearance === "brand",
           },
           {
-            "border-brand-500 bg-transparent text-brand-800 hover:bg-brand-25":
+            "ring-2 ring-brand-500 bg-gray-50 text-brand-800 text-opacity-90 hover:text-opacity-100 hover:bg-brand-25":
               appearance === "brand-outline",
           },
           {
-            "border-transparent bg-gray-50 text-gray-800 text-opacity-90 hover:text-opacity-100 hover:bg-gray-200":
+            "bg-gray-50 text-gray-800 hover:bg-gray-200":
               appearance === "muted",
           },
           {
-            "border border-gray-50 bg-transparent text-gray-800 hover:bg-gray-100":
+            "ring-2 ring-gray-500 bg-gray-50 text-gray-800 hover:bg-gray-200":
               appearance === "muted-outline",
           }
         )}

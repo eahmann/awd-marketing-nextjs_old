@@ -61,9 +61,17 @@ export async function getDataDependencies(json, locale) {
  * @param {boolean} preview router isPreview value
  */
 export async function getPageData(params, locale, preview) {
+  console.log(params, locale, preview)
+
+  const previewParams = preview ? "&_publicationState=preview" : ""
+
   const slug = params.slug.join("/")
   // Find the pages that match this slug
-  const pagesData = await fetchAPI(`/pages?slug=${slug}&_locale=${locale}`)
+  const pagesData = await fetchAPI(
+    `/pages?slug=${slug}&_locale=${locale}${previewParams}`
+  )
+
+  // TODO add check for publish_at datetime field
 
   // Make sure we found something, otherwise return null
   if (pagesData == null || pagesData.length === 0) {

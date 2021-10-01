@@ -1,6 +1,11 @@
+import { IPage } from "@models/IPage"
+
 import { fetchAPI } from "./api"
 
-export async function getLocalizedPage(targetLocale, pageContext) {
+export async function getLocalizedPage(
+  targetLocale,
+  pageContext
+): Promise<IPage> {
   const localization = pageContext.localizations.find(
     (localization) => localization.locale === targetLocale
   )

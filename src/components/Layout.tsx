@@ -13,7 +13,7 @@ const Layout = ({ children, global, preview, pageContext }) => {
         {children}
       </div>
       {/* Aligned to the bottom */}
-      <Footer contactInfo={contactInfo} {...footer} />
+      <Footer contactInfo={contactInfo} pageContext={pageContext} {...footer} />
     </div>
   )
 }

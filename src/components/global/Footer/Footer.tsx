@@ -1,5 +1,7 @@
 import NextImage from "@components/shared/NextImage"
 
+import LocaleSwitch from "../LocaleSwitch"
+
 const navigation = {
   social: [
     {
@@ -66,7 +68,7 @@ const navigation = {
   ],
 }
 
-const Footer = ({ contactInfo, logo, smallText, columns }) => {
+const Footer = ({ contactInfo, logo, smallText, columns, pageContext }) => {
   return (
     <footer
       className="border-t border-gray-200 bg-gray-50"
@@ -117,6 +119,7 @@ const Footer = ({ contactInfo, logo, smallText, columns }) => {
             ))}
           </div>
         </div>
+        <LocaleSwitch pageContext={pageContext} />
         <div className="pt-8 mt-12 border-t border-gray-200">
           <p className="text-base text-gray-400 xl:text-center">
             &copy; 2021 Hisken Construction, Inc. All rights reserved. Website
