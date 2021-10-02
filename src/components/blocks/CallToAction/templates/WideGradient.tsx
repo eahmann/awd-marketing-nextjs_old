@@ -26,14 +26,9 @@ const getTextColor = (theme) => {
   }
 }
 
-const WideGradient = ({
-  title,
-  text,
-  buttons,
-  theme,
-  marginTop,
-  marginBottom,
-}) => {
+const WideGradient = ({ title, text, buttons, settings }) => {
+  const { theme, marginTop, marginBottom } = settings
+
   return (
     <section
       className={classNames(

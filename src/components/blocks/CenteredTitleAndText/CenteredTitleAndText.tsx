@@ -1,7 +1,13 @@
-const CenteredTitleAndText = ({ title, text }) => {
+import classNames from "classnames"
+
+const CenteredTitleAndText = ({ title, text, settings }) => {
+  const { marginTop, marginBottom } = settings
+
   return (
-    <section className="py-12 sm:py-16">
-      <div className="text-center">
+    <section
+      className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}
+    >
+      <div className="mx-auto text-center max-w-7xl">
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           {title}
         </h2>

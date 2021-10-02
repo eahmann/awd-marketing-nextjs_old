@@ -28,14 +28,9 @@ const getTextColor = (theme) => {
   }
 }
 
-const SimpleJustified = ({
-  title,
-  text,
-  buttons,
-  theme,
-  marginTop,
-  marginBottom,
-}) => {
+const SimpleJustified = ({ title, text, buttons, settings }) => {
+  const { theme, marginTop, marginBottom } = settings
+
   return (
     <section
       className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}

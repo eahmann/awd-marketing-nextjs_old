@@ -7,7 +7,9 @@ import "react-image-lightbox/style.css"
 import NextImage from "@components/shared/NextImage"
 import { getStrapiMedia } from "@utils/media"
 
-const ImageGallery = ({ title, images, marginTop, marginBottom }) => {
+const ImageGallery = ({ title, images, settings }) => {
+  const { marginTop, marginBottom } = settings
+
   const [isOpen, setIsOpen] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0)
 

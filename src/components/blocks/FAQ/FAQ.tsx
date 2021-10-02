@@ -2,7 +2,9 @@ import { Disclosure, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/outline"
 import classNames from "classnames"
 
-const FAQ = ({ title, questions, marginTop, marginBottom }) => {
+const FAQ = ({ title, questions, settings }) => {
+  const { marginTop, marginBottom } = settings
+
   return (
     <section
       className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}

@@ -5,7 +5,9 @@ import NextImage from "@components/shared/NextImage/NextImage"
 
 import "react-multi-carousel/lib/styles.css"
 
-const CarouselBlock = ({ title, images, marginTop, marginBottom }) => {
+const CarouselBlock = ({ title, images, settings }) => {
+  const { marginTop, marginBottom } = settings
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
