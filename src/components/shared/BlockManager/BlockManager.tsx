@@ -8,7 +8,7 @@ import ImageGallery from "@components/blocks/ImageGallery"
 import ServiceCardGroup from "@components/blocks/ServiceCardGroup"
 
 const blockComponents = {
-  "blocks.hero-v2": Hero,
+  "blocks.hero": Hero,
   "blocks.carousel": CarouselBlock,
   "blocks.call-to-action": CallToAction,
   "blocks.contact-us-form": ContactUsForm,
@@ -25,7 +25,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
 }
 
 const BlockManager = ({ blocks }) => {
-  return <div>{blocks.map(getBlockComponent)}</div>
+  return <>{blocks.map(getBlockComponent)}</>
 }
 
 export default BlockManager
