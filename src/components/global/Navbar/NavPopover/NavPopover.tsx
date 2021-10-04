@@ -18,8 +18,8 @@ type Props = {
 
 const NavPopover: React.FC<Props> = ({ data, menuState, closeHook }) => {
   function handleNavClose(value) {
-    menuState(value)
-    closeHook()
+    menuState ? menuState(value) : null
+    closeHook ? closeHook() : null
   }
 
   return (
