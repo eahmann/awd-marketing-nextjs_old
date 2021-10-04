@@ -228,8 +228,8 @@ const Admin = ({ data }) => {
 }
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  const data = await fetchAPI(`/pages/1`)
+  // Fetch data for Home
+  const data = await fetchAPI(`/pages/20`)
 
   // Pass data to the page via props
   return { props: { data } }
