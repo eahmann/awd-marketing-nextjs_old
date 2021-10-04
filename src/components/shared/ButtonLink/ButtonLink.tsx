@@ -38,7 +38,6 @@ function getButtonAppearance(theme, outline) {
 
 const ButtonLink: React.FC<Props> = ({ button, className }) => {
   const { label, settings } = button
-  console.log(button)
   const { theme, outline, shadow } = settings
 
   const appearance = getButtonAppearance(theme, outline)

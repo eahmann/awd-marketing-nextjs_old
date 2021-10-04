@@ -61,7 +61,6 @@ export async function getDataDependencies(json, locale) {
  * @param {boolean} preview router isPreview value
  */
 export async function getPageData(params, locale, preview) {
-  console.log(params, locale, preview)
 
   const previewParams = preview ? "&_publicationState=preview" : ""
 
