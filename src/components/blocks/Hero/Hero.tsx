@@ -1,7 +1,7 @@
 import classNames from "classnames"
 
-import ButtonLink from "@components/shared/ButtonLink"
-import NextImage from "@components/shared/NextImage/NextImage"
+import ButtonLink from "@/components/shared/ButtonLink"
+import NextImage from "@/components/shared/NextImage/NextImage"
 
 const Hero = ({
   image,

@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { ILink } from "@models/ILink"
+import { ILink } from "@/types/ILink"
 
 type Props = {
   link: ILink

@@ -1,11 +1,12 @@
-import CallToAction from "@components/blocks/CallToAction"
-import CarouselBlock from "@components/blocks/Carousel/Carousel"
-import CenteredTitleAndText from "@components/blocks/CenteredTitleAndText"
-import ContactUsForm from "@components/blocks/ContactUsForm"
-import FAQ from "@components/blocks/FAQ"
-import Hero from "@components/blocks/Hero"
-import ImageGallery from "@components/blocks/ImageGallery"
-import ServiceCardGroup from "@components/blocks/ServiceCardGroup"
+import CallToAction from "@/components/blocks/CallToAction"
+import CarouselBlock from "@/components/blocks/Carousel/Carousel"
+import CenteredTitleAndText from "@/components/blocks/CenteredTitleAndText"
+import ContactUsForm from "@/components/blocks/ContactUsForm"
+import FAQ from "@/components/blocks/FAQ"
+import FeatureGroup from "@/components/blocks/FeatureGroup"
+import Hero from "@/components/blocks/Hero"
+import ImageGallery from "@/components/blocks/ImageGallery"
+import ServiceCardGroup from "@/components/blocks/ServiceCardGroup"
 
 const blockComponents = {
   "blocks.hero": Hero,
@@ -16,6 +17,7 @@ const blockComponents = {
   "blocks.faq": FAQ,
   "blocks.image-gallery": ImageGallery,
   "blocks.centered-title-and-text": CenteredTitleAndText,
+  "blocks.feature-group": FeatureGroup,
 }
 
 const getBlockComponent = ({ __component, ...rest }, index) => {

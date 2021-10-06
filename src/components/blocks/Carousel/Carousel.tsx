@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import Carousel from "react-multi-carousel"
 
-import NextImage from "@components/shared/NextImage/NextImage"
+import NextImage from "@/components/shared/NextImage/NextImage"
 
 import "react-multi-carousel/lib/styles.css"
 

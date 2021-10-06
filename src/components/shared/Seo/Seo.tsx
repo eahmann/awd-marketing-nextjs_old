@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo"
 
-import { IImage } from "@models/IImage"
-import { getStrapiMedia } from "@utils/media"
+import { IImage } from "@types/IImage"
+import { getStrapiMedia } from "@/utils/media"
 
 type Props = {
   metaTitle: string

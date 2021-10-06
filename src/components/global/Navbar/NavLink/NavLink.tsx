@@ -1,5 +1,5 @@
-import CustomLink from "@components/shared/CustomLink"
-import { INavItem } from "@models/INavItem"
+import CustomLink from "@/components/shared/CustomLink"
+import { INavItem } from "@/types/INavItem"
 
 type Props = {
   data: INavItem

@@ -1,6 +1,6 @@
 import classNames from "classnames"
 
-import NextImage from "@components/shared/NextImage"
+import NextImage from "@/components/shared/NextImage"
 
 const ServiceCardGroup = ({ cards, settings }) => {
   const { marginTop, marginBottom } = settings

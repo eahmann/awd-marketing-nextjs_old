@@ -1,4 +1,4 @@
-import NextImage from "@components/shared/NextImage"
+import NextImage from "@/components/shared/NextImage"
 
 import LocaleSwitch from "../LocaleSwitch"
 

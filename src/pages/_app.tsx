@@ -8,9 +8,9 @@ import ErrorPage from "next/error"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { IImage } from "@models/IImage"
-import { getGlobalData } from "@utils/api"
-import { getStrapiMedia } from "@utils/media"
+import { IImage } from "@types/IImage"
+import { getGlobalData } from "@/utils/api"
+import { getStrapiMedia } from "@/utils/media"
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter()

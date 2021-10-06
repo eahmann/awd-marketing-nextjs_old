@@ -1,13 +1,13 @@
+import { IPage } from "@types/IPage"
+import { IPageContext } from "@types/IPageContext"
+import { getPageData, fetchAPI, getGlobalData } from "@/utils/api"
+import { getLocalizedPaths } from "@/utils/localize"
 import ErrorPage from "next/error"
 import { useRouter } from "next/router"
 
-import Layout from "@components/Layout"
-import BlockManager from "@components/shared/BlockManager"
-import Seo from "@components/shared/Seo"
-import { IPage } from "@models/IPage"
-import { IPageContext } from "@models/IPageContext"
-import { getPageData, fetchAPI, getGlobalData } from "@utils/api"
-import { getLocalizedPaths } from "@utils/localize"
+import Layout from "@/components/Layout"
+import BlockManager from "@/components/shared/BlockManager"
+import Seo from "@/components/shared/Seo"
 
 const DynamicPage = ({ blocks, metadata, preview, global, pageContext }) => {
   const router = useRouter()

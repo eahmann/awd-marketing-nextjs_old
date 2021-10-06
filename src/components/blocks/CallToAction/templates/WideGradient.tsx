@@ -1,6 +1,6 @@
 import classNames from "classnames"
 
-import ButtonLink from "@components/shared/ButtonLink"
+import ButtonLink from "@/components/shared/ButtonLink"
 
 const getBackgroundColor = (theme) => {
   if (theme === "muted") {

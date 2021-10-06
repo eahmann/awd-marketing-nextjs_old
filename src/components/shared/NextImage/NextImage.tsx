@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { getStrapiMedia } from "@utils/media"
+import { getStrapiMedia } from "@/utils/media"
 
 const NextImage = ({ media, ...props }) => {
   const { url, alternativeText } = media

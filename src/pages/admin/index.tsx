@@ -12,7 +12,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline"
 
-import { fetchAPI } from "@utils/api"
+import { fetchAPI } from "@/utils/api"
 
 const navigation = [
   { name: "Dashboard", href: "#", icon: HomeIcon, current: true },

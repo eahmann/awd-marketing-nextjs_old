@@ -3,7 +3,7 @@ import { Fragment } from "react"
 import { Popover, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 
-import { INavItem } from "@models/INavItem"
+import { INavItem } from "@/types/INavItem"
 
 import NavLink from "../NavLink"
 

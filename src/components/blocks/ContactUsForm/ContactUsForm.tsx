@@ -4,7 +4,8 @@ import { MailIcon, PhoneIcon } from "@heroicons/react/outline"
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import * as yup from "yup"
 
-import { fetchAPI } from "@utils/api"
+import { fetchAPI } from "@/utils/api"
+
 interface Values {
   firstName: string
   lastName: string

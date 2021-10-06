@@ -1,4 +1,4 @@
-import { IPage } from "@models/IPage"
+import { IPage } from "@types/IPage"
 
 import { fetchAPI } from "./api"
 

@@ -6,8 +6,8 @@ import { useRouter } from "next/router"
 import PropTypes from "prop-types"
 import { MdExpandMore } from "react-icons/md"
 
-import { useOnClickOutside } from "@utils/hooks"
-import { getLocalizedPage, localizePath } from "@utils/localize"
+import { useOnClickOutside } from "@/utils/hooks"
+import { getLocalizedPage, localizePath } from "@/utils/localize"
 
 import WorldIcon from "./icons/world"
 

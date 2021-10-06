@@ -6,10 +6,10 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-import ButtonLink from "@components/shared/ButtonLink"
-import NextImage from "@components/shared/NextImage/NextImage"
-import { INavbar } from "@models/INavbar"
-import { IPageContext } from "@models/IPageContext"
+import ButtonLink from "@/components/shared/ButtonLink"
+import NextImage from "@/components/shared/NextImage/NextImage"
+import { INavbar } from "@/types/INavbar"
+import { IPageContext } from "@/types/IPageContext"
 
 import NavItem from "./NavItem"
 

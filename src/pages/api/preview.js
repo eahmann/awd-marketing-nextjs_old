@@ -1,5 +1,5 @@
-import { getPageData } from "@utils/api"
-import { parseCookies } from "@utils/parse-cookies"
+import { getPageData } from "@/utils/api"
+import { parseCookies } from "@/utils/parse-cookies"
 
 const preview = async (req, res) => {
   // Check the secret and next parameters

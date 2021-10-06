@@ -4,8 +4,9 @@ import classNames from "classnames"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
 
-import NextImage from "@components/shared/NextImage"
-import { getStrapiMedia } from "@utils/media"
+import NextImage from "@/components/shared/NextImage"
+
+import { getStrapiMedia } from "@/utils/media"
 
 const ImageGallery = ({ title, images, settings }) => {
   const { marginTop, marginBottom } = settings
