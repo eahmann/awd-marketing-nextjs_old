@@ -1,6 +1,6 @@
 import fs from "fs"
 
-import { IPage } from "@types/IPage"
+import { IPage } from "@/types/IPage"
 import { fetchAPI } from "@/utils/api"
 
 const Sitemap = () => {}

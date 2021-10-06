@@ -1,4 +1,4 @@
-import { INavItem } from "@types/INavItem"
+import { INavItem } from "@/types/INavItem"
 
 import NavLink from "../NavLink"
 import NavPopover from "../NavPopover"

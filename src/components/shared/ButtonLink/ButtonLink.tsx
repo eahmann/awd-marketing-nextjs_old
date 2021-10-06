@@ -1,6 +1,6 @@
 import classNames from "classnames"
 
-import { IButtonLink } from "@types/IButtonLink"
+import { IButtonLink } from "@/types/IButtonLink"
 
 import CustomLink from "../CustomLink"
 

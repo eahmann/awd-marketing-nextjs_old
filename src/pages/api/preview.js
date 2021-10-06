@@ -11,7 +11,6 @@ const preview = async (req, res) => {
   const cookies = parseCookies(req)
   const slugArray = req.query.slug.split("/")
 
-  console.log(slugArray)
   // Fetch the headless CMS to check if the provided `slug` exists
   const pageData = await getPageData(
     { slug: !slugArray ? "" : slugArray },

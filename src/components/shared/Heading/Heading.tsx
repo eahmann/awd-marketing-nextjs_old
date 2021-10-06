@@ -1,7 +1,6 @@
 import { IHeading } from "@/types/IHeading"
 
 const Heading: React.FC<IHeading> = ({ title, text, alignment }) => {
-
   return (
     <div className="mx-auto text-center max-w-7xl">
       <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
