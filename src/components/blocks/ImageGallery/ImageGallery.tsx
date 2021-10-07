@@ -23,47 +23,51 @@ const ImageGallery = ({ title, images, settings }) => {
     <section
       className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}
     >
-      {title && (
-        <div className="pb-2 mx-6 sm:px-10 md:max-w-8xl">
-          <h2 className="text-xl font-bold tracking-tight text-gray-800 sm:text-2xl">
-            {title}
-          </h2>
-        </div>
-      )}
-      <div className="mx-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-16">
-        {images.map((image) => (
-          <div
-            key={image.id}
-            onClick={() => {
-              setPhotoIndex(image.id)
-              setIsOpen(true)
-            }}
-            className="relative w-full overflow-hidden shadow-md cursor-pointer rounded-md h-72"
-          >
-            <NextImage media={image} layout="fill" />
-            <span>test</span>
+      <div className="mx-auto max-w-7xl">
+        {title && (
+          <div className="pb-2 mx-6 md:max-w-8xl">
+            <h2 className="text-xl font-bold tracking-tight text-gray-800 sm:text-2xl">
+              {title}
+            </h2>
           </div>
-        ))}
+        )}
+        <div className="mx-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:mx-6">
+          {images.map((image) => (
+            <div
+              key={image.id}
+              onClick={() => {
+                setPhotoIndex(image.id)
+                setIsOpen(true)
+              }}
+              className="relative w-full overflow-hidden shadow-md cursor-pointer rounded-md h-72"
+            >
+              <NextImage media={image} layout="fill" />
+              <span>test</span>
+            </div>
+          ))}
+        </div>
+        {isOpen && (
+          <Lightbox
+            mainSrc={getStrapiMedia(images[photoIndex].url)}
+            nextSrc={getStrapiMedia(
+              images[(photoIndex + 1) % images.length].url
+            )}
+            prevSrc={getStrapiMedia(
+              images[(photoIndex + images.length - 1) % images.length].url
+            )}
+            onCloseRequest={() => {
+              setIsOpen(false)
+            }}
+            onMovePrevRequest={() => {
+              setPhotoIndex((photoIndex + images.length - 1) % images.length)
+            }}
+            onMoveNextRequest={() => {
+              setPhotoIndex((photoIndex + 1) % images.length)
+            }}
+            imageCaption={images[photoIndex].caption}
+          />
+        )}
       </div>
-      {isOpen && (
-        <Lightbox
-          mainSrc={getStrapiMedia(images[photoIndex].url)}
-          nextSrc={getStrapiMedia(images[(photoIndex + 1) % images.length].url)}
-          prevSrc={getStrapiMedia(
-            images[(photoIndex + images.length - 1) % images.length].url
-          )}
-          onCloseRequest={() => {
-            setIsOpen(false)
-          }}
-          onMovePrevRequest={() => {
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }}
-          onMoveNextRequest={() => {
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }}
-          imageCaption={images[photoIndex].caption}
-        />
-      )}
     </section>
   )
 }

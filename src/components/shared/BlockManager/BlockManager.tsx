@@ -16,7 +16,7 @@ const blockComponents = {
   "blocks.service-card-group": ServiceCardGroup,
   "blocks.faq": FAQ,
   "blocks.image-gallery": ImageGallery,
-  "blocks.centered-title-and-text": CenteredTitleAndText,
+  "blocks.title-and-text": CenteredTitleAndText,
   "blocks.feature-group": FeatureGroup,
 }
 

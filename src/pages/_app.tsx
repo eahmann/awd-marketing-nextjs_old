@@ -2,7 +2,7 @@ import React from "react"
 
 import { DefaultSeo } from "next-seo"
 import { AppProps } from "next/app"
-import "@styles/tailwind.scss"
+import "@/styles/tailwind.scss"
 import App from "next/app"
 import ErrorPage from "next/error"
 import Head from "next/head"

@@ -49,10 +49,10 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
                 <Link href="/">
                   <a>
                     <span className="sr-only">Link Home</span>
-                    <div className={"md:hidden max-h-45px"}>
+                    <div className="md:hidden max-h-45px">
                       <NextImage width="75" height="45" media={navbar.logo} />
                     </div>
-                    <div className={"lt-md:hidden max-h-75px"}>
+                    <div className="lt-md:hidden max-h-75px">
                       <NextImage width="120" height="75" media={navbar.logo} />
                     </div>
                   </a>
@@ -130,7 +130,7 @@ const Navbar: React.FC<Props> = ({ navbar, pageContext }) => {
                         <Link href="/">
                           <a onClick={() => setMobileMenuIsShown(false)}>
                             <span className="sr-only">Link Home</span>
-                            <div className={"md:hidden max-h-45px"}>
+                            <div className="md:hidden max-h-45px">
                               <NextImage
                                 width="75"
                                 height="45"

@@ -3,15 +3,8 @@ import classNames from "classnames"
 import ButtonLink from "@/components/shared/ButtonLink"
 import NextImage from "@/components/shared/NextImage/NextImage"
 
-const Hero = ({
-  image,
-  title,
-  label,
-  text,
-  buttons,
-  marginTop,
-  marginBottom,
-}) => {
+const Hero = ({ image, title, label, text, buttons, settings }) => {
+  const { marginTop, marginBottom } = settings
   return (
     <section
       className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}

@@ -7,6 +7,7 @@ export function getStrapiURL(path) {
 
 // Helper to make GET requests to Strapi
 export async function fetchAPI(path, options = {}) {
+  console.log("fetchAPI")
   const defaultOptions = {
     headers: {
       "Content-Type": "application/json",
@@ -32,6 +33,7 @@ function mergeDataDeps(blockData, extendedData) {
 }
 
 export async function checkRequiredData(block, locale) {
+  console.log("checkRequiredData")
   switch (block.__component) {
     case "blocks.contact-us-form":
       const global = await getGlobalData(locale)
@@ -82,6 +84,7 @@ export async function getPageData(params, locale, preview) {
 
 // Get site data from Strapi (metadata, navbar, footer...)
 export async function getGlobalData(locale) {
+  console.log("getGlobalData")
   const global = await fetchAPI(`/global?_locale=${locale}`)
   return global
 }
