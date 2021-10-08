@@ -13,6 +13,7 @@ import {
   LogoutIcon,
 } from "@heroicons/react/outline"
 import { useSession, signOut } from "next-auth/client"
+import { useRouter } from "next/router"
 
 import { fetchAPI } from "@/utils/api"
 
@@ -32,6 +33,7 @@ function classNames(...classes) {
 const Admin = ({ data }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [session, loading] = useSession()
+  const router = useRouter()
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -111,7 +113,10 @@ const Admin = ({ data }) => {
                   ))}
                   <a
                     onClick={async () => {
-                      await signOut()
+                      await signOut({
+                        redirect: false,
+                      })
+                      router.push("/login")
                     }}
                     className={classNames(
                       "item.current"
@@ -191,7 +196,10 @@ const Admin = ({ data }) => {
                 ))}
                 <button
                   onClick={async () => {
-                    await signOut()
+                    await signOut({
+                      redirect: false,
+                    })
+                    router.push("/login")
                   }}
                   className={classNames(
                     "item.current"
