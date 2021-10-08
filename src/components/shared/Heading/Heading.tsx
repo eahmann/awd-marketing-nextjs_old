@@ -26,7 +26,7 @@ const Heading: React.FC<IHeading> = ({ title, text, label, alignment }) => {
           {label}
         </h2>
       )}
-      <p className="mt-2 leading-8 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+      <p className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 leading-8 sm:text-4xl">
         {title}
       </p>
       {text && <p className="mt-4 text-lg text-gray-500 leading-6">{text}</p>}

@@ -26,7 +26,7 @@ const FeatureGroup = ({ heading, features, settings }) => {
               key={feature.id}
             >
               {/* Text section */}
-              <div className="w-full px-4 text-lg lg:w-6/12 lg:pr-6 sm:px-0 flex flex-col">
+              <div className="flex flex-col w-full px-4 text-lg lg:w-6/12 lg:pr-6 sm:px-0">
                 <div className="flex-grow">
                   <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 ">
                     {feature.title}

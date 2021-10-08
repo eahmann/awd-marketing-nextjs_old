@@ -10,7 +10,9 @@ import {
   MenuIcon,
   UsersIcon,
   XIcon,
+  LogoutIcon,
 } from "@heroicons/react/outline"
+import { useSession, signOut } from "next-auth/client"
 
 import { fetchAPI } from "@/utils/api"
 
@@ -29,6 +31,7 @@ function classNames(...classes) {
 
 const Admin = ({ data }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [session, loading] = useSession()
 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
@@ -106,6 +109,23 @@ const Admin = ({ data }) => {
                       {item.name}
                     </a>
                   ))}
+                  <a
+                    onClick={async () => {
+                      await signOut()
+                    }}
+                    className={classNames(
+                      "item.current"
+                        ? "bg-indigo-800 text-white"
+                        : "text-white hover:bg-indigo-600 hover:bg-opacity-75",
+                      "group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                    )}
+                  >
+                    <LogoutIcon
+                      className="flex-shrink-0 w-6 h-6 mr-4 text-indigo-300"
+                      aria-hidden="true"
+                    />
+                    Logout
+                  </a>
                 </nav>
               </div>
               <div className="flex flex-shrink-0 p-4 border-t border-indigo-800">
@@ -120,7 +140,7 @@ const Admin = ({ data }) => {
                     </div>
                     <div className="ml-3">
                       <p className="text-base font-medium text-white">
-                        Tom Cook
+                        Tom Cook2
                       </p>
                       <p className="text-sm font-medium text-indigo-200 group-hover:text-white">
                         View profile
@@ -169,6 +189,23 @@ const Admin = ({ data }) => {
                     {item.name}
                   </a>
                 ))}
+                <button
+                  onClick={async () => {
+                    await signOut()
+                  }}
+                  className={classNames(
+                    "item.current"
+                      ? "bg-brand-800 text-white"
+                      : "text-white hover:bg-indigo-600 hover:bg-opacity-75",
+                    "group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                  )}
+                >
+                  <LogoutIcon
+                    className="flex-shrink-0 w-6 h-6 mr-4 text-indigo-300"
+                    aria-hidden="true"
+                  />
+                  Logout
+                </button>
               </nav>
             </div>
             <div className="flex flex-shrink-0 p-4 border-t border-indigo-800">
@@ -182,7 +219,9 @@ const Admin = ({ data }) => {
                     />
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-white">Tom Cook</p>
+                    <p className="text-sm font-medium text-white">
+                      {session.user.email}
+                    </p>
                     <p className="text-xs font-medium text-indigo-200 group-hover:text-white">
                       View profile
                     </p>
@@ -208,7 +247,7 @@ const Admin = ({ data }) => {
           <div className="py-6">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
               <h1 className="text-2xl font-semibold text-gray-900">
-                Server Side Rendered Dashboard
+                SafeMoon is a scam.
               </h1>
             </div>
             <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
@@ -234,4 +273,7 @@ export async function getServerSideProps() {
   // Pass data to the page via props
   return { props: { data } }
 }
+
+Admin.auth = true
+
 export default Admin
