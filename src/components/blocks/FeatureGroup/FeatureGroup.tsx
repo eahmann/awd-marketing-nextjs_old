@@ -11,8 +11,12 @@ interface Props {
 }
 
 const FeatureGroup = ({ heading, features, settings }) => {
+  const { marginTop, marginBottom } = settings
+
   return (
-    <section>
+    <section
+      className={classNames({ "mt-20": marginTop }, { "mb-20": marginBottom })}
+    >
       {heading && <Heading {...heading} />}
       <div className="flex flex-col py-10 mx-2 sm:mx-auto gap-20 sm:px-6 lg:px-8 max-w-7xl">
         {features &&
@@ -36,7 +40,8 @@ const FeatureGroup = ({ heading, features, settings }) => {
                 <div className="w-max">
                   <CustomLink link={feature.link} className="">
                     <span className="text-brand-600 with-arrow hover:underline">
-                      {feature.link.label} <FiArrowRight className="inline" />
+                      {feature.link.label}
+                      <FiArrowRight className="inline" />
                     </span>
                   </CustomLink>
                 </div>
