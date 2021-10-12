@@ -61,7 +61,7 @@ const LocaleSwitch = ({ pageContext }) => {
   }, [locale, router, pageContext])
 
   return (
-    <div ref={select} className="relative ml-4 ">
+    <div ref={select} className="relative hidden ml-4">
       <button
         type="button"
         className="flex items-center justify-between w-20 h-full px-2 py-2 cursor-pointer hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 focus:outline-none rounded-md"
