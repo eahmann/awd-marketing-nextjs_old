@@ -16,7 +16,7 @@ const PreviewBanner = ({}) => {
     //   </div>
     // </div>
     <div className="flex items-center justify-center px-4 py-4 bg-secondary md:py-4 md:px-4 lg:py-8 lg:px-8">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center text-red-100 bg-red-600">
         <div className="flex-1 pr-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,9 +33,10 @@ const PreviewBanner = ({}) => {
           </svg>
         </div>
 
-        <p className="max-w-3xl text-lg text-white leading-6">
-          You are in preview mode
-        </p>
+        <p className="max-w-3xl text-lg leading-6">You are in preview mode</p>
+        <a className="underline" href={exitURL}>
+          Turn off
+        </a>
       </div>
     </div>
   )
