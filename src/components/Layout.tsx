@@ -3,7 +3,7 @@ import Navbar from "./global/Navbar"
 import PreviewBanner from "./global/PreviewBanner"
 
 const Layout = ({ children, global, preview, pageContext }) => {
-  const { navbar, footer, contactInfo } = global
+  const { navbar, footer, contactInfo, social } = global
   return (
     <div className="flex flex-col justify-between min-h-screen">
       {/* Aligned to the top */}
@@ -13,7 +13,12 @@ const Layout = ({ children, global, preview, pageContext }) => {
         {children}
       </div>
       {/* Aligned to the bottom */}
-      <Footer contactInfo={contactInfo} pageContext={pageContext} {...footer} />
+      <Footer
+        contactInfo={contactInfo}
+        pageContext={pageContext}
+        social={social}
+        {...footer}
+      />
     </div>
   )
 }
